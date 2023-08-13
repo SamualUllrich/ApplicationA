@@ -39,11 +39,12 @@
                 Text="Start Streaming"
                 Clicked="OnStartStreamingClicked"
                 HorizontalOptions="Center" />
-
-            <Label
-                x:Name="TimestampLabel"
-                SemanticProperties.HeadingLevel="Level5"
-                Text="Timestamp: "
+            
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
