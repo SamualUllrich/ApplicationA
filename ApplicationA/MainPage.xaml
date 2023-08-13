@@ -27,7 +27,19 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
+            
+            <Button
+                x:Name="StartServerBtn"
+                Text="Start Server"
+                Clicked="OnStartServerClicked"
+                HorizontalOptions="Center" />
 
+            <Button
+                x:Name="StartStreamingBtn"
+                Text="Start Streaming"
+                Clicked="OnStartStreamingClicked"
+                HorizontalOptions="Center" />
+            
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"
