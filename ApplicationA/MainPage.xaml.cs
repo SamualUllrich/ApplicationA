@@ -1,6 +1,7 @@
 ﻿using EmbedIO;
 using EmbedIO.WebApi;
 
+
 namespace ApplicationA
 {
     public partial class MainPage : ContentPage
@@ -15,10 +16,22 @@ namespace ApplicationA
         {
             if (server == null)
             {
-                var url = "http://localhost:9696/";
-                server = CreateWebServer(url);
-                server.RunAsync();
-                StartServerBtn.Text = "Server Started";
+                string url;
+
+                if (DeviceInfo.Platform == DevicePlatform.Android)
+                {
+                    url = "http://10.0.2.2:9696/";
+                    server = CreateWebServer(url);
+                    server.RunAsync();
+                    StartServerBtn.Text = "Server Started";
+                }
+                else
+                {
+                    url = "http://localhost:9696/";
+                    server = CreateWebServer(url);
+                    server.RunAsync();
+                    StartServerBtn.Text = "Server Started";
+                }
             }
         }
 

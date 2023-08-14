@@ -37,21 +37,16 @@ namespace ApplicationA
 
         protected override async Task OnClientConnectedAsync(IWebSocketContext context)
         {
-            // Send a welcome message
             await SendAsync(context, "Connected to data stream!");
 
             try
             {
-                // Start sending data if streaming is enabled
                 while (_isStreaming)
                 {
-                    // Generate or retrieve the data to be sent
                     var data = GenerateData();
 
-                    // Send the data to the client
                     await SendAsync(context, data);
 
-                    // Optional delay to control the rate of data transmission
                     await Task.Delay(1000);
                 }
             }
