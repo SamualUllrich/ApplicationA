@@ -8,6 +8,7 @@
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ApplicationA</RootNamespace>
 		<UseMaui>true</UseMaui>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 

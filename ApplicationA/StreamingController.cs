@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationA
 {
+
     public class StreamingController : WebApiController
     {
         [Route(HttpVerbs.Get, "/start")]

@@ -12,10 +12,7 @@ namespace ApplicationA
         private static bool _isStreaming = false;
 
         public DataWebSocketModule(string urlPath)
-            : base(urlPath, true)
-        {
-
-        }
+            : base(urlPath, true) {}
 
         public static void StartStreaming()
         {
@@ -32,8 +29,6 @@ namespace ApplicationA
             byte[] rxBuffer,
             IWebSocketReceiveResult rxResult)
         {
-            // Echo the message back to the sender to test.
-
             var receivedMessage = Encoding.UTF8.GetString(rxBuffer);
             Console.WriteLine($"Received message from client: {receivedMessage}");
 
@@ -62,7 +57,6 @@ namespace ApplicationA
             }
             catch (WebSocketException ex)
             {
-                // Log or handle the exception as needed, e.g., if the connection is closed.
                 Console.WriteLine($"WebSocket exception: {ex.Message}");
             }
         }
