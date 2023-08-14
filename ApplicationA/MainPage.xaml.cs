@@ -1,5 +1,6 @@
 ﻿using EmbedIO;
 using EmbedIO.WebApi;
+using System.Diagnostics;
 
 
 namespace ApplicationA
@@ -32,6 +33,7 @@ namespace ApplicationA
                     server.RunAsync();
                     StartServerBtn.Text = "Server Started";
                 }
+                Debug.WriteLine($"Server started at {url}");
             }
         }
 
@@ -41,8 +43,8 @@ namespace ApplicationA
             {
                 DataWebSocketModule.StartStreaming();
                 StartStreamingBtn.Text = "Streaming Started";
-
                 TimestampLabel.Text = "Timestamp: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                Console.WriteLine("Streaming button clicked.");
             }
         }
 

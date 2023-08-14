@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ApplicationA
 {
@@ -17,11 +18,14 @@ namespace ApplicationA
         public static void StartStreaming()
         {
             _isStreaming = true;
+            Debug.WriteLine("Streaming started");
+
         }
 
         public static void StopStreaming()
         {
             _isStreaming = false;
+            Debug.WriteLine("Streaming stopped");
         }
 
         protected override Task OnMessageReceivedAsync(
@@ -37,22 +41,23 @@ namespace ApplicationA
 
         protected override async Task OnClientConnectedAsync(IWebSocketContext context)
         {
-            await SendAsync(context, "Connected to data stream!");
+            await SendAsync(context, "Connected to data stream");
+            Debug.WriteLine("Client connected");
 
             try
             {
                 while (_isStreaming)
                 {
                     var data = GenerateData();
+                    Debug.WriteLine($"Streaming data: {data}");
 
                     await SendAsync(context, data);
-
                     await Task.Delay(1000);
                 }
             }
             catch (WebSocketException ex)
             {
-                Console.WriteLine($"WebSocket exception: {ex.Message}");
+                Debug.WriteLine($"WebSocket exception: {ex.Message}");
             }
         }
 
