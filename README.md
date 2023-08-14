@@ -2,29 +2,25 @@
 
 ApplicationA is a MAUI application integrated with EmbedIO to serve as a REST API server along with web socket support. This application can communicate with another application (ApplicationB) through a REST API to enable streaming data via a web socket. You can use this to stream various types of data, such as positions or sensor data from ApplicationA to ApplicationB.
 
-## **Features**
+### **Features**
 
-  REST API Server: Built with EmbedIO, it exposes an endpoint for controlling the streaming process.
+  * **REST API Server:** Built with EmbedIO, it exposes an endpoint for controlling the streaming process.
   
-  WebSocket Integration: ApplicationA can start and stop streaming data through web sockets.
+  * **WebSocket Integration:** ApplicationA can start and stop streaming data through web sockets.
   
-  Cross-Platform Support: Targeted for multiple platforms including Android, with specific URL configurations.
+  * **Cross-Platform Support:** Targeted for multiple platforms including Android, with specific URL configurations.
 
-## **How to Use**
-### **Starting the Server**
-Launch ApplicationA.
+### **How to Use**
 
-Click the "Start Server" button to initialize the server.
-
-* For Android, the server will run at http://10.0.2.2:9696/.
-
-* For other platforms, the server will run at http://localhost:9696/.
+* Use the "Start Server" button to initiate the server.
+* Use the "Start Streaming" button to begin streaming data.
+* The data will be streamed to any connected clients, such as ApplicationB.
 
 ### **Starting Streaming**
 
-With the server running, click the "Start Streaming" button.
+* With the server running, click the "Start Streaming" button.
 
-The data streaming will begin, and a timestamp will be displayed on the screen.
+* The data streaming will begin, and a timestamp will be displayed on the screen.
 
 ### **REST API Endpoints**
 
